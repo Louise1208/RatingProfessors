@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+{%  extends 'MainPages/base.html' %}
+{% block content %}
+
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Modules</title>
+    </head>
+    <body class="bodylist">
+
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Welcome!</div>
+            <div class="panel-body">
+                A list of all module instances and the professor(s) teaching each of them.
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h2>Modules Information</h2>
+    </div>
+    <div>
+        <table class="table table-striped table-bordered table-hover w-auto">
+            <thead>
+            <tr class="bg-info">
+                <th>Code</th>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Semester</th>
+                <th>Taught By</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for module in modules %}
+                <tr>
+                    <td>{{ module.code }}</td>
+                    <td>{{ module.name }}</td>
+                    <td>{{ module.year.year }}</td>
+                    <td>{{ module.semester }}</td>
+                    <td>{{ module.taught_by }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    </body>
+    </html>
+{% endblock %}
+
+</html>

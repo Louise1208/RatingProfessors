@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'MainPages/base.html' %}
+{% load static %}
+{% block content %}
+    <body>
+    {% if user.is_authenticated %}
+        <div class="page-container">
+            <h2 class="top-menu">Hello {{ user.username }},</h2>
+            <p>Please choose from options below.</p>
+        </div>
+    {% else %}
+        <p>Please choose from options below.</p>
+    {% endif %}
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Modules</h5>
+                        <p class="card-text">a list of all module instances and the professor(s) teaching each of them.</p>
+                        <p><a class="btn btn-primary" href="{% url 'MainPages:modules' %}"
+                              role="button">View details &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+
+           <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Professors</h5>
+                        <p class="card-text">the rating of all professors.</p>
+                        <p><a class="btn btn-primary" href="{% url 'MainPages:professors' %}"
+                              role="button">View details &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+           <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Rate</h5>
+                        <p class="card-text">go to rate.</p>
+                        <p><a class="btn btn-primary" href="{% url 'MainPages:rate' %}"
+                              role="button">View details &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}
+</html>

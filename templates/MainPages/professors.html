@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+{%  extends 'MainPages/base.html' %}
+{% block content %}
+
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Professors</title>
+    </head>
+    <body class="bodylist">
+
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Welcome!</div>
+            <div class="panel-body">
+                A list of professors.
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h2>Modules Information</h2>
+    </div>
+    <div>
+        <ul>
+
+            {% for professor in professors %}
+                <li> the rating of all professors {{ professor.professor }} is {{ professor.rate }}</li>
+            {% endfor %}
+
+        </ul>
+
+    </div>
+    </body>
+    </html>
+{% endblock %}
+
+</html>
